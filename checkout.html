@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WanderX | Checkout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-shell inner-shell">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <p>Choose your package, departure date, and traveller count before confirming the booking.</p>
+        <a href="explore.html">Back to explore</a>
+      </div>
+    </div>
+
+    <nav class="navbar container">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">WX</span>
+        <span class="brand-copy">
+          <strong>WanderX</strong>
+          <small>Travel Checkout</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="my-bookings.html">My Trips</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="section container checkout-shell">
+    <section class="checkout-form-card">
+      <div class="section-head compact-head">
+        <div>
+          <span class="eyebrow">Checkout Page</span>
+          <h2>Complete your WanderX booking</h2>
+        </div>
+      </div>
+
+      <form id="checkoutForm" class="checkout-form">
+        <div class="field-grid">
+          <div class="field-card">
+            <label for="checkoutPackage">Tour Package</label>
+            <select id="checkoutPackage" name="packageId" required></select>
+          </div>
+
+          <div class="field-card">
+            <label for="travelDate">Departure Date</label>
+            <input id="travelDate" name="travelDate" type="date" required />
+          </div>
+        </div>
+
+        <div class="field-grid">
+          <div class="field-card">
+            <label for="travellersInput">Number of Travellers</label>
+            <div class="traveller-picker">
+              <button type="button" class="stepper-btn" id="decreaseTravellers">-</button>
+              <input id="travellersInput" name="travellers" type="number" min="1" max="12" value="2" required />
+              <button type="button" class="stepper-btn" id="increaseTravellers">+</button>
+            </div>
+          </div>
+
+          <div class="field-card">
+            <label for="checkoutPhone">Contact Number</label>
+            <input id="checkoutPhone" name="phone" type="tel" placeholder="+91 98765 43210" required />
+          </div>
+        </div>
+
+        <div class="field-grid">
+          <div class="field-card">
+            <label for="checkoutName">Traveller Name</label>
+            <input id="checkoutName" name="name" type="text" placeholder="Traveller full name" required />
+          </div>
+
+          <div class="field-card">
+            <label for="checkoutEmail">Email Address</label>
+            <input id="checkoutEmail" name="email" type="email" placeholder="traveller@example.com" required />
+          </div>
+        </div>
+
+        <div class="field-card">
+          <label for="specialRequest">Special Request</label>
+          <textarea id="specialRequest" name="specialRequest" rows="4" placeholder="Dietary notes, room preferences, or anything your coordinator should know"></textarea>
+        </div>
+
+        <div class="payment-methods">
+          <label class="method-option">
+            <input type="radio" name="paymentMethod" value="Card" checked />
+            <span>
+              <strong>Card</strong>
+              <small>Fast and standard checkout</small>
+            </span>
+          </label>
+          <label class="method-option">
+            <input type="radio" name="paymentMethod" value="UPI" />
+            <span>
+              <strong>UPI</strong>
+              <small>Convenient mobile payment</small>
+            </span>
+          </label>
+          <label class="method-option">
+            <input type="radio" name="paymentMethod" value="Bank Transfer" />
+            <span>
+              <strong>Bank Transfer</strong>
+              <small>Manual confirmation flow</small>
+            </span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary full">Confirm Booking</button>
+        <p id="checkoutFeedback" class="feedback-message" hidden></p>
+      </form>
+    </section>
+
+    <aside class="summary-card">
+      <span class="eyebrow">Booking Summary</span>
+      <h2 id="summaryPackageTitle">Select a package</h2>
+      <p id="summaryPackageMeta">Departure dates and trip details will update here.</p>
+
+      <div class="summary-list">
+        <div>
+          <span>Travel Date</span>
+          <strong id="summaryTravelDate">Not selected</strong>
+        </div>
+        <div>
+          <span>Travellers</span>
+          <strong id="summaryTravellers">2 travellers</strong>
+        </div>
+        <div>
+          <span>Price per Traveller</span>
+          <strong id="summaryPricePerTraveller">INR 0</strong>
+        </div>
+        <div>
+          <span>Total</span>
+          <strong id="summaryTotal">INR 0</strong>
+        </div>
+        <div>
+          <span>Payment Method</span>
+          <strong id="summaryPaymentMethod">Card</strong>
+        </div>
+      </div>
+
+      <div class="summary-note">
+        <strong>Checkout note</strong>
+        <p>Your booking is stored locally in this demo and appears in the traveller dashboard and admin panel instantly.</p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

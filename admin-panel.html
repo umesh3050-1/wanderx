@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WanderX | Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-shell inner-shell">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <p>Admin dashboard for package inventory and booking operations.</p>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+    </div>
+
+    <nav class="navbar container">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">WX</span>
+        <span class="brand-copy">
+          <strong>WanderX</strong>
+          <small>Admin Dashboard</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#bookings">Bookings</a>
+        <a href="#packages">Packages</a>
+      </div>
+
+      <button type="button" class="btn btn-primary" id="addPackageBtn">Add Package</button>
+    </nav>
+  </header>
+
+  <main class="section container admin-dashboard">
+    <section id="overview" class="dashboard-block">
+      <div class="section-head compact-head">
+        <div>
+          <span class="eyebrow">Overview</span>
+          <h2>WanderX travel operations snapshot</h2>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span>Active Packages</span>
+          <strong id="adminPackageCount">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Total Bookings</span>
+          <strong id="adminBookingCount">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Total Travellers</span>
+          <strong id="adminTravelerCount">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Revenue</span>
+          <strong id="adminRevenue">INR 0</strong>
+        </article>
+      </div>
+    </section>
+
+    <section id="bookings" class="dashboard-block">
+      <div class="section-head compact-head">
+        <div>
+          <span class="eyebrow">Bookings</span>
+          <h2>Confirmed package bookings</h2>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Booking ID</th>
+              <th>Traveller</th>
+              <th>Package</th>
+              <th>Date</th>
+              <th>Travellers</th>
+              <th>Total</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="adminBookingsTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="packages" class="dashboard-block">
+      <div class="section-head compact-head">
+        <div>
+          <span class="eyebrow">Packages</span>
+          <h2>Add or remove listed tour packages</h2>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Package</th>
+              <th>Location</th>
+              <th>Duration</th>
+              <th>Price</th>
+              <th>Departure Dates</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="packagesTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="packageModal" aria-hidden="true">
+    <div class="modal-card">
+      <button type="button" class="modal-close" id="closePackageModal">&times;</button>
+      <h3>Add New Tour Package</h3>
+      <p class="modal-sub">Create a package that appears instantly on the explore page and checkout page.</p>
+
+      <form id="packageForm" class="admin-form">
+        <div class="field-grid">
+          <div class="field-card">
+            <label for="packageTitle">Package Title</label>
+            <input id="packageTitle" name="title" type="text" placeholder="Santorini Sunsets" required />
+          </div>
+          <div class="field-card">
+            <label for="packageLocation">Location</label>
+            <input id="packageLocation" name="location" type="text" placeholder="Greece" required />
+          </div>
+        </div>
+
+        <div class="field-grid">
+          <div class="field-card">
+            <label for="packageDuration">Duration</label>
+            <input id="packageDuration" name="duration" type="text" placeholder="6D / 5N" required />
+          </div>
+          <div class="field-card">
+            <label for="packagePrice">Price per Traveller</label>
+            <input id="packagePrice" name="price" type="number" min="1000" step="500" placeholder="78000" required />
+          </div>
+        </div>
+
+        <div class="field-grid">
+          <div class="field-card">
+            <label for="packageCategory">Category</label>
+            <input id="packageCategory" name="category" type="text" placeholder="Luxury Escape" required />
+          </div>
+          <div class="field-card">
+            <label for="packageGroupSize">Max Group Size</label>
+            <input id="packageGroupSize" name="groupSize" type="number" min="1" max="40" placeholder="12" required />
+          </div>
+        </div>
+
+        <div class="field-card">
+          <label for="packageDates">Departure Dates</label>
+          <input id="packageDates" name="dates" type="text" placeholder="2026-04-14, 2026-05-06, 2026-06-21" required />
+        </div>
+
+        <div class="field-grid">
+          <div class="field-card">
+            <label for="packageImage">Image URL</label>
+            <input id="packageImage" name="image" type="url" placeholder="https://images.unsplash.com/..." />
+          </div>
+          <div class="field-card">
+            <label for="packageImageFile">Choose File</label>
+            <input id="packageImageFile" name="imageFile" type="file" accept="image/*" />
+          </div>
+        </div>
+
+        <div class="field-card">
+          <label>Image Preview</label>
+          <div class="image-preview-card" id="packageImagePreviewCard">
+            <img id="packageImagePreview" src="" alt="Selected package preview" hidden />
+            <p id="packageImagePreviewText">Paste an image URL or choose a local travel image.</p>
+          </div>
+        </div>
+
+        <div class="field-card">
+          <label for="packageDescription">Description</label>
+          <textarea id="packageDescription" name="description" rows="4" placeholder="Describe the package highlights" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary full">Save Package</button>
+        <p id="packageFeedback" class="feedback-message" hidden></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

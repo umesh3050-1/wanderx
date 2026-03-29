@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WanderX | Explore Packages</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="ota-page">
+  <header class="site-shell inner-shell ota-shell">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <p>Compare departures, package inclusions, and pricing in a cleaner travel marketplace view.</p>
+        <a href="checkout.html">Go to checkout</a>
+      </div>
+    </div>
+
+    <nav class="navbar container ota-navbar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">WX</span>
+        <span class="brand-copy">
+          <strong>WanderX</strong>
+          <small>Travel Marketplace</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="my-bookings.html">My Trips</a>
+        <a href="admin.html">Admin</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+    </nav>
+
+    <section class="container explore-header">
+      <div class="explore-header-copy">
+        <span class="eyebrow">Explore & Compare</span>
+        <h1>Browse destination packages the way travellers expect from a modern OTA.</h1>
+        <p>Review price-led cards, quick itinerary highlights, and departure options before moving into checkout.</p>
+      </div>
+
+      <div class="marketplace-bar">
+        <article>
+          <span>Packages</span>
+          <strong id="publicPackageCount">0</strong>
+        </article>
+        <article>
+          <span>Search style</span>
+          <strong>Package-first</strong>
+        </article>
+        <article>
+          <span>Best for</span>
+          <strong>Flexible planners</strong>
+        </article>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Travel Catalogue</span>
+          <h2>Bookable tours with clear pricing, departures, and package details.</h2>
+        </div>
+      </div>
+      <div class="package-grid ota-package-grid" id="packageDirectoryGrid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>WanderX</h4>
+        <p>Curated package booking with a modern travel marketplace feel.</p>
+      </div>
+      <div>
+        <h4>Browse</h4>
+        <a href="explore.html">Explore</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="my-bookings.html">My Trips</a>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+      <div>
+        <h4>Admin</h4>
+        <a href="admin.html">Admin Login</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="packageDetailsModal" aria-hidden="true">
+    <div class="modal-card details-modal-card">
+      <button type="button" class="modal-close" id="closePackageDetailsModal">&times;</button>
+      <div id="packageDetailsContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

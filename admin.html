@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WanderX | Admin Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-page">
+  <main class="auth-layout">
+    <section class="auth-showcase admin-showcase">
+      <a href="index.html" class="brand brand-light">
+        <span class="brand-mark">WX</span>
+        <span class="brand-copy">
+          <strong>WanderX</strong>
+          <small>Admin Portal</small>
+        </span>
+      </a>
+
+      <div class="auth-copy">
+        <span class="eyebrow">Operations Access</span>
+        <h1>Manage packages and track booking activity from one dashboard.</h1>
+        <p>The admin panel is designed for package inventory control and booking visibility across the website.</p>
+      </div>
+
+      <div class="showcase-list">
+        <span>Track confirmed bookings</span>
+        <span>Add or remove tour packages</span>
+        <span>Monitor total travellers and revenue</span>
+      </div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-panel-top">
+        <span class="eyebrow">Admin Login</span>
+        <h2>Sign in to the WanderX control center</h2>
+        <p>Restricted access for authorized WanderX administrators only.</p>
+      </div>
+
+      <div class="auth-card">
+        <form class="auth-form" id="adminSignInForm">
+          <label for="adminEmail">Work Email</label>
+          <input id="adminEmail" name="email" type="email" placeholder="admin@wanderx.com" required />
+
+          <label for="adminPassword">Password</label>
+          <input id="adminPassword" name="password" type="password" placeholder="Enter your password" required />
+
+          <button type="submit" class="btn btn-primary full">Enter Admin Panel</button>
+        </form>
+
+        <p id="authFeedback" class="feedback-message" hidden></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

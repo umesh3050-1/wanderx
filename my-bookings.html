@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WanderX | My Trips</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-shell inner-shell">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <p>Your traveller dashboard for upcoming trips and booking history.</p>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+    </div>
+
+    <nav class="navbar container">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">WX</span>
+        <span class="brand-copy">
+          <strong>WanderX</strong>
+          <small>Traveller Dashboard</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="my-bookings.html">My Trips</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="section container">
+    <section class="profile-hero">
+      <div>
+        <span class="eyebrow">My Trips</span>
+        <h1 id="travelerName">Traveller Name</h1>
+        <p id="travelerEmail">traveller@example.com</p>
+        <p id="travelerPhone">+91 98765 43210</p>
+      </div>
+
+      <div class="profile-stats">
+        <article>
+          <strong id="travelerBookingCount">0</strong>
+          <span>Bookings</span>
+        </article>
+        <article>
+          <strong id="travelerTotalSpend">INR 0</strong>
+          <span>Total Spend</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="dashboard-block">
+      <div class="section-head compact-head">
+        <div>
+          <span class="eyebrow">Booking History</span>
+          <h2>Your confirmed package bookings</h2>
+        </div>
+        <a href="explore.html" class="btn btn-secondary">Book Another Trip</a>
+      </div>
+
+      <div class="table-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Booking ID</th>
+              <th>Package</th>
+              <th>Travel Date</th>
+              <th>Travellers</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="bookingHistoryBody"></tbody>
+        </table>
+        <p id="bookingHistoryEmpty" class="empty-state" hidden>No trips booked yet. Your first WanderX booking will appear here.</p>
+        <p class="booking-note">Cancellations are available only until 24 hours before the scheduled departure date.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

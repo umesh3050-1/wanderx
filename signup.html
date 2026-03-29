@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WanderX | Sign Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-page">
+  <main class="auth-layout">
+    <section class="auth-showcase travel-showcase warm-showcase">
+      <a href="index.html" class="brand brand-light">
+        <span class="brand-mark">WX</span>
+        <span class="brand-copy">
+          <strong>WanderX</strong>
+          <small>Create Traveller Account</small>
+        </span>
+      </a>
+
+      <div class="auth-copy">
+        <span class="eyebrow">Join WanderX</span>
+        <h1>Create a travel account that is ready for your next booking.</h1>
+        <p>Sign up to browse tour packages, move quickly through checkout, and keep a simple record of your booked departures.</p>
+      </div>
+
+      <div class="showcase-list">
+        <span>Fast trip checkout</span>
+        <span>Saved traveller details</span>
+        <span>Access to your booking history</span>
+      </div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-panel-top">
+        <span class="eyebrow">Traveller Sign Up</span>
+        <h2>Start with your WanderX profile</h2>
+        <p>Already have an account? <a href="login.html" class="text-link">Log in here</a></p>
+      </div>
+
+      <div class="auth-card">
+        <form class="auth-form" id="travelerSignUpForm">
+          <label for="signupName">Full Name</label>
+          <input id="signupName" name="name" type="text" placeholder="Your full name" required />
+
+          <label for="signupEmail">Email Address</label>
+          <input id="signupEmail" name="email" type="email" placeholder="traveller@example.com" required />
+
+          <label for="signupPhone">Phone Number</label>
+          <input id="signupPhone" name="phone" type="tel" placeholder="+91 98765 43210" />
+
+          <label for="signupPassword">Create Password</label>
+          <input id="signupPassword" name="password" type="password" placeholder="At least 6 characters" required />
+
+          <label for="signupConfirmPassword">Confirm Password</label>
+          <input id="signupConfirmPassword" name="confirmPassword" type="password" placeholder="Confirm your password" required />
+
+          <button type="submit" class="btn btn-primary full">Create Traveller Account</button>
+        </form>
+
+        <p id="signupFeedback" class="feedback-message" hidden></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

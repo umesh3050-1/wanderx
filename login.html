@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WanderX | Traveller Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-page">
+  <main class="auth-layout">
+    <section class="auth-showcase travel-showcase">
+      <a href="index.html" class="brand brand-light">
+        <span class="brand-mark">WX</span>
+        <span class="brand-copy">
+          <strong>WanderX</strong>
+          <small>Traveller Access</small>
+        </span>
+      </a>
+
+      <div class="auth-copy">
+        <span class="eyebrow">Login</span>
+        <h1>Return to your trips, plans, and upcoming departures.</h1>
+        <p>Sign in to continue browsing packages, complete checkout, or review your confirmed bookings.</p>
+      </div>
+
+      <div class="showcase-list">
+        <span>Browse premium tour packages</span>
+        <span>Book with travel date and traveller count</span>
+        <span>Review bookings from your dashboard</span>
+      </div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-panel-top">
+        <span class="eyebrow">Traveller Sign In</span>
+        <h2>Welcome back to WanderX</h2>
+        <p>New here? <a href="signup.html" class="text-link">Create your account</a></p>
+      </div>
+
+      <div class="auth-card">
+        <form class="auth-form" id="travelerLoginForm">
+          <label for="loginEmail">Email Address</label>
+          <input id="loginEmail" name="email" type="email" placeholder="traveller@example.com" required />
+
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" name="password" type="password" placeholder="Enter your password" required />
+
+          <button type="submit" class="btn btn-primary full">Login to WanderX</button>
+        </form>
+
+        <p id="loginFeedback" class="feedback-message" hidden></p>
+      </div>
+
+      <div class="auth-note">
+        <p>Admin access is managed separately through the <a href="admin.html" class="text-link">admin portal</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

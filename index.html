@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WanderX | Smart Travel Booking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="ota-page">
+  <header class="site-shell ota-shell">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <p>Packages, departures, payments, and booking management in one travel platform.</p>
+        <a href="mailto:hello@wanderx.com">hello@wanderx.com</a>
+      </div>
+    </div>
+
+    <nav class="navbar container ota-navbar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">WX</span>
+        <span class="brand-copy">
+          <strong>WanderX</strong>
+          <small>Travel Marketplace</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="my-bookings.html">My Trips</a>
+        <a href="admin.html">Admin</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+    </nav>
+
+    <section class="container ota-hero">
+      <div class="ota-hero-copy">
+        <span class="eyebrow">All-in-One Travel Planning</span>
+        <h1>Book curated holiday packages with the confidence of a modern travel app.</h1>
+        <p>WanderX gives travellers a smoother way to browse tours, lock dates, manage bookings, and cancel eligible departures before the 24-hour window closes.</p>
+      </div>
+
+      <div class="search-shell">
+        <div class="search-tabs" aria-label="Travel categories">
+          <button type="button" class="search-tab is-active">Holiday Packages</button>
+          <button type="button" class="search-tab">Weekend Escapes</button>
+          <button type="button" class="search-tab">Luxury Tours</button>
+          <button type="button" class="search-tab">International</button>
+        </div>
+
+        <div class="search-ribbon">
+          <article class="search-block">
+            <span>Where</span>
+            <strong>Curated destinations</strong>
+            <small>Bali, Switzerland, Kerala, Santorini and more</small>
+          </article>
+          <article class="search-block">
+            <span>Departure</span>
+            <strong>Choose your schedule</strong>
+            <small>Flexible package dates at checkout</small>
+          </article>
+          <article class="search-block">
+            <span>Travellers</span>
+            <strong>Solo to small groups</strong>
+            <small>Transparent package pricing</small>
+          </article>
+          <a href="explore.html" class="btn btn-primary search-cta">Search Packages</a>
+        </div>
+
+        <div class="promo-strip">
+          <span>Instant booking flow</span>
+          <span>24-hour cancellation rule</span>
+          <span>Admin-managed package inventory</span>
+          <span>Clear traveller dashboard</span>
+        </div>
+      </div>
+
+      <div class="deal-strip">
+        <article class="deal-card featured-deal">
+          <p class="deal-label">Trending pick</p>
+          <h3>Swiss Alps Panorama</h3>
+          <p>Premium rail journey with scenic stays and handpicked alpine experiences.</p>
+          <div class="deal-meta">
+            <strong>From INR 1,52,000</strong>
+            <span>8D / 7N</span>
+          </div>
+        </article>
+        <article class="mini-stat-card">
+          <strong id="heroPackageCount">0</strong>
+          <span>Active packages</span>
+        </article>
+        <article class="mini-stat-card">
+          <strong id="heroBookingCount">0</strong>
+          <span>Bookings handled</span>
+        </article>
+        <article class="mini-stat-card">
+          <strong id="heroDestinationCount">0</strong>
+          <span>Destinations</span>
+        </article>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Popular Deals</span>
+          <h2>Top-selling itineraries travellers are exploring right now.</h2>
+        </div>
+        <a href="explore.html" class="text-link">View all packages</a>
+      </div>
+      <div class="package-grid ota-package-grid" id="featuredPackageGrid"></div>
+    </section>
+
+    <section class="section band-section">
+      <div class="container ota-benefit-grid">
+        <article class="value-card">
+          <h3>Search-first booking experience</h3>
+          <p>Designed like a travel marketplace, with visible pricing, clear date selection, and a more commercial browsing flow.</p>
+        </article>
+        <article class="value-card">
+          <h3>Traveller-friendly control</h3>
+          <p>Users can log in, confirm departures, review trip records, and cancel eligible bookings before the 24-hour cutoff.</p>
+        </article>
+        <article class="value-card">
+          <h3>Operational back office</h3>
+          <p>Admins can add or remove tour packages, track revenue, and monitor confirmed, cancelled, or departed bookings.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Why WanderX</span>
+          <h2>Built to feel familiar to travel shoppers, but branded clearly as WanderX.</h2>
+        </div>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step-card">
+          <span>01</span>
+          <h3>Explore a wider package marketplace</h3>
+          <p>Browse destination-led cards with quick price visibility, ratings, and departure options.</p>
+        </article>
+        <article class="step-card">
+          <span>02</span>
+          <h3>Complete a structured checkout</h3>
+          <p>Select the package, departure date, traveller count, payment rail, and special requests in one place.</p>
+        </article>
+        <article class="step-card">
+          <span>03</span>
+          <h3>Manage trips after booking</h3>
+          <p>Your dashboard keeps confirmed trips visible and shows when cancellation is still allowed.</p>
+        </article>
+        <article class="step-card">
+          <span>04</span>
+          <h3>Track operations in admin</h3>
+          <p>The admin panel stays aligned with what travellers see, including package inventory and booking status.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>WanderX</h4>
+        <p>Smart package booking with structured checkout, clean booking controls, and professional travel operations.</p>
+      </div>
+      <div>
+        <h4>Marketplace</h4>
+        <a href="explore.html">Explore Packages</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="my-bookings.html">My Trips</a>
+      </div>
+      <div>
+        <h4>Access</h4>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="admin.html">Admin Portal</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:hello@wanderx.com">hello@wanderx.com</a>
+        <a href="tel:+911234567890">+91 12345 67890</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="packageDetailsModal" aria-hidden="true">
+    <div class="modal-card details-modal-card">
+      <button type="button" class="modal-close" id="closePackageDetailsModal">&times;</button>
+      <div id="packageDetailsContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
